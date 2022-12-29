@@ -1,32 +1,23 @@
 # sklls
+> sklls is a POC and not actively maintained
 
-> CLI that counts committed lines by extension type (and npm dependency) and groups them by committer email
+sklls is a simple CLI tool that aggregates git-blames by committer and generates line-counts for every committer based on file-extension and NPM dependencies.
 
-```
-Usage of sklls:
-  -cloneDir string
-    	Directory to use for cloning repos into (default: Temp dir is being used
-  -concurrency int
-    	Dictates how many files are analyzed in parallel (default 10)
-  -dir string
-    	Directory where to look for repos for. Default is CWD.
-  -exclude string
-    	Comma separated list of file suffixes to exclude from scanning (can be both extensions and filenames) (default "package-lock.json,yarn.lock")
-  -ghpat string
-    	Github Personal Access Token for cloning non-public repos
-  -ghrepos string
-    	Comma separated list of Github repos (org/repo - e.g. spring-media/ep-curato) to clone from Github & analyze (requires ghpat to be set as well, if repos are non-public)
-  -out string
-    	Output folder (default "./")
-  -perfLogThreshold int
-    	Performance data is logged for any file analysis that takes longer than perfLogThreshold (in ms) (default 500)
-  -timeout int
-    	Timeout in seconds for analyzing repositieries (default: 30 [seconds]) (default 30)
-  -verbose
-    	Enable verbose output
-```
+The purpose of sklls is to automatically generate tech-usage profiles of contributors (which can serve as a proxy for tech sklls - get it?) working on any number of repositories.
 
-# Example output file
+> Check out how we used sklls at Axel Springer to build an automatically generated team-directory that helps developers find each other based on tech-stack: `TODO <insert blogpost here>`
+
+# How to use
+* Install `sklls` (see below)
+* Run `$ sklls -out sklls-example-data` 
+
+After installing sklls (see below) just run `sklls -out sklls-example-data` in any folder that contains git-repos.
+
+sklls will run through all sub-folders and analyze any git-repos it can find (that have an origin set - aka which are hosted somewhere).  
+
+After sklls has run through successfully, you will find JSON files in `/sklls-example-data` similar to the following example output:
+
+## sklls output
 ```json
 {
     "Ext": {
@@ -118,11 +109,38 @@ Usage of sklls:
 }
 ```
 
-# Install
-`make install`
+# Usage
+```
+$ sklls -help
 
-# Try it yourself
-`sklls -out ./sklls-data` (just run that in any folder that contains repositories)
+Usage of sklls:
+  -cloneDir string
+    	Directory to use for cloning repos into (default: Temp dir is being used
+  -concurrency int
+    	Dictates how many files are analyzed in parallel (default 10)
+  -dir string
+    	Directory where to look for repos for. Default is CWD.
+  -exclude string
+    	Comma separated list of file suffixes to exclude from scanning (can be both extensions and filenames) (default "package-lock.json,yarn.lock")
+  -ghpat string
+    	Github Personal Access Token for cloning non-public repos
+  -ghrepos string
+    	Comma separated list of Github repos (org/repo - e.g. spring-media/ep-curato) to clone from Github & analyze (requires ghpat to be set as well, if repos are non-public)
+  -out string
+    	Output folder (default "./")
+  -perfLogThreshold int
+    	Performance data is logged for any file analysis that takes longer than perfLogThreshold (in ms) (default 500)
+  -timeout int
+    	Timeout in seconds for analyzing repositieries (default: 30 [seconds]) (default 30)
+  -verbose
+    	Enable verbose output
+```
+
+# Install
+* Make sure go is installed
+* Clone this repo
+* Run `make install` from the project root
+* After installation is complete, you can run `sklls` from anywhere on your machine
 
 # License
 MIT

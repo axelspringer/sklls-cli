@@ -5,7 +5,7 @@ sklls is a simple CLI tool that aggregates git-blames by committer and generates
 
 The purpose of sklls is to automatically generate tech-usage profiles of contributors (which can serve as a proxy for tech sklls - get it?) working on any number of repositories.
 
-> Check out how we used sklls at Axel Springer to build an automatically generated team-directory that helps developers find each other based on tech-stack: `TODO <insert blogpost here>`
+> Check out how we used sklls at Axel Springer to build an automatically generated team-directory that helps developers find each other based on tech-stack: [https://medium.com/axel-springer-tech/do-your-git-blames-show-your-technical-skills-yes-and-no-2da5b88315e6](https://medium.com/axel-springer-tech/do-your-git-blames-show-your-technical-skills-yes-and-no-2da5b88315e6)
 
 # How to use
 * Install `sklls` (see below)

@@ -143,4 +143,4 @@ Usage of sklls:
 * After installation is complete, you can run `sklls` from anywhere on your machine
 
 # License
-MIT
+MIT     

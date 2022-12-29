@@ -1,6 +1,6 @@
 # sklls
 
-> sklls CLI makes it easy to pull git blame logs for repositories and group them by email address
+> CLI that counts committed lines by extension type (and npm dependency) and groups them by committer email
 
 ```
 Usage of sklls:
@@ -28,16 +28,92 @@ Usage of sklls:
 
 # Example output file
 ```json
-// jonas.peeck@axelspringer.com
 {
     "Ext": {
+        "": {
+            "Thu, 29 Dec 2022 16:19:58 +0100": 38617,
+            "Wed, 21 Dec 2022 16:45:57 +0100": 21
+        },
+        ".ds_store": {
+            "Thu, 29 Dec 2022 16:19:58 +0100": 2
+        },
+        ".gitignore": {
+            "Thu, 29 Dec 2022 16:19:58 +0100": 1
+        },
+        ".go": {
+            "Thu, 29 Dec 2022 16:19:58 +0100": 2929
+        },
+        ".json": {
+            "Thu, 29 Dec 2022 16:19:58 +0100": 668310
+        },
         ".md": {
-            "Wed, 13 Jul 2019 16:57:22 +0200": 25
+            "Thu, 29 Dec 2022 16:19:58 +0100": 51
+        },
+        ".mod": {
+            "Thu, 29 Dec 2022 16:19:58 +0100": 22
+        },
+        ".sum": {
+            "Thu, 29 Dec 2022 16:19:58 +0100": 41
+        },
+        ".txt": {
+            "Thu, 29 Dec 2022 16:19:58 +0100": 1
         }
     },
-    "Dep": {},
+    "Dep": {
+        "EcmaScript": {
+            "@jest/globals@^29.1.2": {
+                "Mon, 05 Sep 2022 12:12:24 +0200": 63,
+                "Sun, 06 Nov 2022 14:12:51 +0100": 520,
+                "Sun, 06 Nov 2022 15:51:31 +0100": 8
+            },
+            "@mui/icons-material@^5.10.9": {
+                "Sun, 06 Nov 2022 14:12:51 +0100": 728
+            },
+            "@mui/material@^5.10.12": {
+                "Sun, 06 Nov 2022 14:12:51 +0100": 843
+            },
+            "@octokit/graphql@^5.0.1": {
+                "Sun, 06 Nov 2022 14:12:51 +0100": 404
+            },
+            "@storybook/react@^6.5.12": {
+                "Mon, 19 Sep 2022 16:11:56 +0200": 92
+            },
+            "@storybook/testing-library@^0.0.13": {
+                "Mon, 19 Sep 2022 16:11:56 +0200": 26
+            },
+            "file-extension-icon-js@^1.1.6": {
+                "Sun, 06 Nov 2022 14:12:51 +0100": 728
+            },
+            "glob@^8.0.3": {
+                "Mon, 05 Sep 2022 12:12:24 +0200": 115,
+                "Sun, 06 Nov 2022 14:12:51 +0100": 51,
+                "Thu, 08 Sep 2022 13:18:28 +0200": 4
+            },
+            "http-proxy@^1.18.1": {
+                "Mon, 19 Sep 2022 16:11:56 +0200": 12
+            },
+            "react-dom@^18.2.0": {
+                "Mon, 19 Sep 2022 10:19:53 +0200": 13
+            },
+            "react-router-dom@^6.4.0": {
+                "Mon, 19 Sep 2022 10:19:53 +0200": 5,
+                "Mon, 19 Sep 2022 16:11:56 +0200": 13,
+                "Sun, 06 Nov 2022 14:12:51 +0100": 145
+            },
+            "react@^18.2.0": {
+                "Mon, 19 Sep 2022 10:19:53 +0200": 13,
+                "Mon, 19 Sep 2022 16:11:56 +0200": 269,
+                "Sun, 06 Nov 2022 14:12:51 +0100": 843
+            },
+            "swr@^1.3.0": {
+                "Mon, 19 Sep 2022 10:19:53 +0200": 5,
+                "Mon, 19 Sep 2022 16:11:56 +0200": 25,
+                "Sun, 06 Nov 2022 14:12:51 +0100": 30
+            }
+        }
+    },
     "Usernames": [
-        "Jonas Peeck"
+        "aGuyNamedJonas"
     ]
 }
 ```
